@@ -1,0 +1,216 @@
+/* Reset all elements so padding/margin doesn't break layout */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  box-sizing: border-box; /* Makes width/height calculations easier */
+}
+
+/* Basic page layout */
+html,
+body {
+  font-family: sans-serif;
+  background-color: #0d0d0d; /* Dark background */
+  color: #fff; /* White text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+/* Make all buttons show pointer on hover */
+button {
+  cursor: pointer;
+}
+
+/* Hides text for screen readers, used inside buttons with icons */
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Text size utilities */
+.text_large {
+  font-size: 32px;
+}
+
+.text_small {
+  font-size: 24px;
+}
+
+/* Wrapper contains the whole app */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Responsive for small screens */
+@media (max-width: 510px) {
+  .wrapper {
+    width: 100%;
+  }
+  header {
+    justify-content: center;
+  }
+}
+
+/* Header with title and icon */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* title left, icon next to it */
+  gap: 12px; /* space between title and icon */
+  padding: 42px;
+}
+
+.header-icon {
+  width: 24px; /* icon size */
+}
+
+/* TodoHero container */
+.todohero_section {
+  border: 1px solid #c2b39a;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-self: center;
+  width: 100%;
+  max-width: 455px;
+  padding: 12px;
+  border-radius: 11px;
+  margin-bottom: 10px;
+}
+
+.todohero_section div:first-child p {
+  margin: 0;
+}
+
+/* Circle showing completed/total todos */
+.todohero_circle {
+  background-color: #88ab33;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* makes it a circle */
+  font-size: 30px;
+  display: flex;
+  align-items: center; /* centers text vertically */
+  justify-content: center; /* centers text horizontally */
+  text-align: center;
+  color: #fff;
+}
+
+/* Form styling */
+.form {
+  align-self: center;
+  width: 97%;
+  max-width: 455px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 38px;
+}
+
+.form label {
+  width: 90%; /* input box takes most space */
+}
+
+.form input {
+  background-color: #1f2937; /* dark input background */
+  color: #fff; /* white text */
+  width: 100%;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 11px;
+  padding: 12px;
+}
+
+.form button {
+  width: 10%; /* small plus button */
+  height: 50px;
+  border-radius: 11px;
+  background-color: #88ab33; /* green */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Todo list container */
+.todo_list {
+  align-self: center;
+  width: 97%;
+  max-width: 455px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  gap: 27px; /* space between todos */
+}
+
+/* Each todo item */
+.todo_item,
+.edit-form input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  max-width: 455px;
+  border: 1px solid #c2b39a;
+  font-size: 16px;
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 12px;
+  border-radius: 11px;
+  gap: 5px;
+}
+
+/* Editing input box */
+.edit-form input {
+  outline: transparent;
+  width: calc(100% - 14px);
+  height: calc(100% - 12px);
+  border: transparent;
+}
+
+/* Left side of todo: checkbox + text */
+.todo_items_left,
+.todo_items_right {
+  display: flex;
+  align-items: center;
+}
+
+.todo_items_left {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  gap: 12px;
+  font-size: 16px;
+  padding-right: 10px;
+}
+
+/* Right side buttons: edit/delete */
+.todo_items_right {
+  gap: 6px;
+}
+
+.todo_items_right button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+
+.todo_items_right button svg {
+  fill: #c2b39a;
+}
